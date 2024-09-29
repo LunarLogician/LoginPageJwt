@@ -1,0 +1,48 @@
+<%- include('../partials/navbar') %>
+
+<div class="container">
+    <div class="message-container">
+        <h2>Registration Successful</h2>
+        <a href="/login">Go to Login Page</a>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>
+
+<style>
+    body {
+        background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
+        font-family: 'Arial', sans-serif;
+        color: #34495e;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .message-container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        margin: auto;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #34495e;
+    }
+
+    a {
+        color: #34495e;
+        text-decoration: none;
+        font-weight: bold;
+    }
+</style>
