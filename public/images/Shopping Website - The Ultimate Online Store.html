@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://localhost:3000/userlogin -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Website - The Ultimate Online Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #181818;
+            color: #f4f4f4;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(to right, #2c3e50, #34495e);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar a {
+            color: #f4f4f4;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #e67e22;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('https://example.com/luxury-car.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            max-width: 600px;
+            margin: 20px 0;
+        }
+
+        .cta {
+            background-color: #e67e22;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta:hover {
+            background-color: #d35400;
+        }
+
+        /* About Cars Section */
+        .section {
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            color: #e67e22;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            max-width: 900px;
+            margin: 0 auto;
+            color: #bdc3c7;
+            line-height: 1.7;
+        }
+
+        .section img {
+            width: 80%;
+            border-radius: 10px;
+            margin-top: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hobbies Section */
+        .hobbies {
+            background-color: #2c3e50;
+            padding: 80px 50px;
+        }
+
+        .hobby-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            text-align: left;
+        }
+
+        .hobby-item img {
+            width: 45%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .hobby-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .hobby-item div {
+            width: 50%;
+            padding: 0 20px;
+        }
+
+        .hobby-item h3 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #e67e22;
+        }
+
+        .hobby-item p {
+            font-size: 1.2em;
+            color: #bdc3c7;
+            line-height: 1.7;
+        }
+
+        /* Product Cards Section */
+        .products {
+            padding: 80px 50px;
+            text-align: center;
+        }
+/* Product Cards Section *//* Product Cards Section */
+.products {
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%; /* Ensure it takes full width */
+}
+
+.product-card {
+    background-color: #0e0f10;
+    border-radius: 10px;
+    padding: 15px; /* Reduced padding */
+    margin: 10px; /* Margin remains for spacing */
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: calc(30% - 20px); /* Adjusted calculation for three cards per row */
+    height: 400px; /* Reduced height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px; /* Control image height */
+    object-fit: cover; /* Ensure images maintain aspect ratio */
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    font-size: 1.5em; /* Reduced font size */
+    margin: 10px 0;
+    color: #e67e22;
+    font-family: 'Your Font Family', sans-serif; /* Add your font here */
+}
+
+.product-card p {
+    color: #bdc3c7;
+    font-size: 1em; /* Reduced font size */
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+.product-card a {
+    display: inline-block;
+    background-color: #e67e22;
+    color: white;
+    padding: 8px 15px; /* Reduced padding */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.product-card a:hover {
+    background-color: #d35400;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+    .product-card {
+        width: calc(100% - 40px); /* 1 card per row */
+        height: auto; /* Allow dynamic height for smaller screens */
+    }
+
+    .product-card img {
+        height: auto; /* Adjust image height for mobile screens */
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div><a href="http://localhost:3000/userlogin#">Shopping Website</a></div>
+        <div>
+            <a href="http://localhost:3000/userlogin#cars">Cars</a>
+            <a href="http://localhost:3000/userlogin#hobbies">Hobbies</a>
+            <a href="http://localhost:3000/userlogin#products">Shop</a>
+            <a href="http://localhost:3000/userlogin#contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <img src="./Shopping Website - The Ultimate Online Store_files/banner.png" alt="car" class="banner">
+    </div>
+
+   
+    
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <h2>Available Products for Shopping</h2>
+        <div class="product-grid">
+            <!-- Product Card 1 -->
+            <div class="product-card">
+                <img src="./Shopping Website - The Ultimate Online Store_files/watch.jpg" alt="Product 1">
+                <h3>Luxury Watch</h3>
+                <p>Experience elegance and precision with this luxury watch.</p>
+                <a href="http://localhost:3000/userlogin#">Buy Now</a>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <img src="./Shopping Website - The Ultimate Online Store_files/glasse.jpg" alt="Product 2">
+                <h3>Stylish Sunglasses</h3>
+                <p>Protect your eyes while looking stylish with these sunglasses.</p>
+                <a href="http://localhost:3000/userlogin#">Buy Now</a>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="product-card">
+                <img src="./Shopping Website - The Ultimate Online Store_files/bagback.jpg" alt="Product 3">
+                <h3>Premium Backpack</h3>
+                <p>Carry your essentials in style with this premium backpack.</p>
+                <a href="http://localhost:3000/userlogin#">Buy Now</a>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="product-card">
+                <img src="./Shopping Website - The Ultimate Online Store_files/ear.jpg" alt="Product 4">
+                <h3>Wireless Headphones</h3>
+                <p>Enjoy your favorite music with these high-quality wireless headphones.</p>
+                <a href="http://localhost:3000/userlogin#">Buy Now</a>
+            </div>
+
+            <!-- Product Card 5 -->
+            <div class="product-card">
+                <img src="./Shopping Website - The Ultimate Online Store_files/mouse.jpg" alt="Product 5">
+                <h3>Gaming Mouse</h3>
+                <p>Enhance your gaming experience with this ergonomic gaming mouse.</p>
+                <a href="http://localhost:3000/userlogin#">Buy Now</a>
+            </div>
+
+            <!-- Product Card 6 -->
+            <div class="product-card">
+                <img src="./Shopping Website - The Ultimate Online Store_files/phone.jpg" alt="Product 6">
+                <h3>Smartphone</h3>
+                <p>Stay connected with the latest smartphone technology.</p>
+                <a href="http://localhost:3000/userlogin#">Buy Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-us" class="section">
+        <h2>About Us</h2>
+        <p>Welcome to our luxury shopping website! Our CEO, Muhammad Zubair, is a talented student from Bahria University, dedicated to bringing you the finest selection of luxury watches, stylish earbuds, and premium accessories. With a passion for excellence and an eye for quality, we strive to provide an exceptional shopping experience that meets the needs of our discerning customers.</p>
+    </section>
+    
+  
+    <!-- Footer -->
+   
+    
+
+
+<footer style="background-color: #2c3e50; color: #f4f4f4; padding: 50px 20px; text-align: left;">
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto;">
+        
+        <div style="flex: 1; min-width: 250px; padding: 20px;">
+            <h3 style="color: #e67e22; font-size: 1.5em;">About Us</h3>
+            <p style="line-height: 1.7; color: #bdc3c7;">We are a leading online shopping destination, offering the finest luxury products from around the world. Our mission is to bring quality and style to your fingertips.</p>
+        </div>
+
+        <div style="flex: 1; min-width: 250px; padding: 20px;">
+            <h3 style="color: #e67e22; font-size: 1.5em;">Quick Links</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="http://localhost:3000/userlogin#cars" style="color: #f4f4f4; text-decoration: none;">Cars</a></li>
+                <li><a href="http://localhost:3000/userlogin#hobbies" style="color: #f4f4f4; text-decoration: none;">Hobbies</a></li>
+                <li><a href="http://localhost:3000/userlogin#products" style="color: #f4f4f4; text-decoration: none;">Shop</a></li>
+                <li><a href="http://localhost:3000/userlogin#contact" style="color: #f4f4f4; text-decoration: none;">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div style="flex: 1; min-width: 250px; padding: 20px;">
+            <h3 style="color: #e67e22; font-size: 1.5em;">Contact Information</h3>
+            <p style="color: #bdc3c7;">
+                Email: <a href="http://localhost:3000/zzubairahmed402@gmail.com" style="color: #f4f4f4; text-decoration: none;">zubair@support.gmail.com<br>
+                Phone: 03095599523<br>
+                Address: Islamabad, Pakistan
+            </a></p><a href="http://localhost:3000/zzubairahmed402@gmail.com" style="color: #f4f4f4; text-decoration: none;">
+        </a></div><a href="http://localhost:3000/zzubairahmed402@gmail.com" style="color: #f4f4f4; text-decoration: none;">
+
+        <!-- Social Media Links Section -->
+        </a><div style="flex: 1; min-width: 250px; padding: 20px;"><a href="http://localhost:3000/zzubairahmed402@gmail.com" style="color: #f4f4f4; text-decoration: none;">
+            <h3 style="color: #e67e22; font-size: 1.5em;">Follow Us</h3>
+            </a><div><a href="http://localhost:3000/zzubairahmed402@gmail.com" style="color: #f4f4f4; text-decoration: none;">
+                </a><a href="http://localhost:3000/userlogin#" style="color: #f4f4f4; text-decoration: none; margin-right: 10px;">Facebook</a>
+                <a href="http://localhost:3000/userlogin#" style="color: #f4f4f4; text-decoration: none; margin-right: 10px;">Twitter</a>
+                <a href="http://localhost:3000/userlogin#" style="color: #f4f4f4; text-decoration: none;">Instagram</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="text-align: center; border-top: 1px solid #bdc3c7; margin-top: 40px; padding-top: 20px;">
+        <p>© 2024 Shopping Website. All rights reserved. | <a href="http://localhost:3000/userlogin#" style="color: #e67e22; text-decoration: none;">Privacy Policy</a> | <a href="http://localhost:3000/userlogin#" style="color: #e67e22; text-decoration: none;">Terms of Service</a></p>
+    </div>
+    
+</footer>
+</body></html>
